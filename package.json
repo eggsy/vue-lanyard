@@ -1,6 +1,6 @@
 {
   "name": "@eggsydev/vue-lanyard",
-  "description": "🚀 Vue plugin for Lanyard API to track your Discord status.",
+  "description": ":rocket: Lanyard API plugin for Vue to easily track your Discord status.",
   "version": "1.0.5",
   "license": "MIT",
   "main": "src/index.js",
