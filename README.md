@@ -92,9 +92,35 @@ WebSockets are amazing, but do you actually need them? That depends on what you 
 
 If you only want to fetch data when the page loads and don't want to update it until another page refresh, you can go with REST (normal) method. It's up to you!
 
-### 🤞 Todo
+### 🌟 Nuxt.js
 
-- [ ] [Nuxt.js](https://nuxtjs.org) compatibility.
+You can use this plugin the way you use Vue plugins (for client-side) in Nuxt.js!
+
+```js
+// plugins/VueLanyard.js
+import Vue from "vue";
+import VueLanyard from "@eggsydev/vue-lanyard";
+
+Vue.use(VueLanyard);
+```
+
+And reference that file in your `nuxt.config`.
+
+```js
+// nuxt.config.js
+export default {
+  plugins: [
+    {
+      src: "@/plugins/VueLanyard",
+      mode: "client",
+    },
+  ],
+};
+```
+
+### ✍ TypeScript
+
+This plugin comes with type support. You can import types from `@eggsydev/vue-lanyard/@types` and use them in your script.
 
 ### 🎉 Thanks
 
