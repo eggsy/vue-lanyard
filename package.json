@@ -1,14 +1,11 @@
 {
   "name": "@eggsydev/vue-lanyard",
-  "description": "Lanyard API plugin for Vue 2.",
+  "description": "🚀 Vue plugin for Lanyard API to track your Discord status.",
   "version": "1.0.4",
   "license": "MIT",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eggsy/vue-lanyard.git"
-  },
+  "repository": "git+https://github.com/eggsy/vue-lanyard.git",
   "bugs": {
     "url": "https://github.com/eggsy/vue-lanyard/issues"
   },
