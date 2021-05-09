@@ -80,6 +80,8 @@ socket.addEventListener("message", ({ data }) => {
 });
 ```
 
+> ⚠ When using WebSocket, if you're using Vue Router, it won't close the socket connection even after you change the page, and if you return to the same page where you are connecting to socket, it will create another connection which will cause conflicts and unnecessary socket connections. You can use Vue's `beforeDestroy` hook to disconnect from the socket previous socket before leaving the page, check `example/src/components/Lanyard/WebSocket.vue` for more details.
+
 ### 🤔 When to use WebSocket?
 
 WebSockets are amazing, but do you actually need them? That depends on what you want to achieve. If you want to achieve these, you might want to go with WebSocket.
