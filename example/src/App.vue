@@ -1,32 +1,23 @@
 <template>
   <div>
-    <!-- Call the component that uses fetch -->
-    <Lanyard v-if="mode === 'default'" />
+    <h4>
+      Note: This example uses REST method, see
+      <code>components/Lanyard/WebSocket.vue</code> for WebSocket example.
+    </h4>
 
-    <!-- Call the component that uses WebSocket connection -->
-    <LanyardWithSocket v-else-if="mode === 'socket'" />
-
-    <button
-      @click="mode === 'default' ? (mode = 'socket') : (mode = 'default')"
-    >
-      Switch Mode
-    </button>
+    <Lanyard />
+    <!-- <LanyardW /> -->
   </div>
 </template>
 
 <script>
 import Lanyard from "./components/Lanyard/Default";
-import LanyardWithSocket from "./components/Lanyard/Default";
+/* import LanyardW from "./components/Lanyard/WebSocket"; */
 
 export default {
   components: {
     Lanyard,
-    LanyardWithSocket,
-  },
-  data() {
-    return {
-      mode: "default", // or "socket"
-    };
+    /* LanyardW, */
   },
 };
 </script>
