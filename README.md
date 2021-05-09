@@ -2,6 +2,8 @@
 
 > A Vue (2) plugin to track your Discord status using [Lanyard API](https://github.com/Phineas/lanyard/).
 
+![Vue Lanyard plugin image](./images/readme.jpg)
+
 Lanyard is a service that makes it super easy to export your live Discord presence to an API endpoint and to a WebSocket for you to use wherever you want. This plugin creates a connection between Lanyard and your Vue app **as a plugin** and lets you access the `$lanyard` anywhere in your app!
 
 ✨ **This plugin supports both REST and WebSocket methods.**
