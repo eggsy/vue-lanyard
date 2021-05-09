@@ -1,0 +1,31 @@
+{
+  "name": "@eggsy/vue-lanyard",
+  "description": "Lanyard API plugin for Vue 2.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/index.js",
+  "types": "src/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggsy/vue-lanyard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eggsy/vue-lanyard/issues"
+  },
+  "author": "Abdulbaki Dursun <eggsydev@gmail.com> (https://eggsy.xyz)",
+  "keywords": [
+    "vue",
+    "lanyard",
+    "websocket"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "homepage": "https://github.com/eggsy/vue-lanyard#readme",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

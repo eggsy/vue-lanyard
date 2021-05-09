@@ -1,0 +1,5 @@
+# .npmrc file
+.npmrc
+
+# Node modules folder
+node_modules
