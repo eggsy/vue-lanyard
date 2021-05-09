@@ -4,14 +4,15 @@
 
 Lanyard is a service that makes it super easy to export your live Discord presence to an API endpoint and to a WebSocket for you to use wherever you want. This plugin creates a connection between Lanyard and your Vue app **as a plugin** and lets you access the `$lanyard` anywhere in your app!
 
-✨ This plugin supports both REST and WebSocket methods.
+✨ **This plugin supports both REST and WebSocket methods.**
 
 ### 🔧 Install
 
 You'll need [Node.js](https://nodejs.org) and an existing Vue app to use this plugin (you can find an example vue-cli app in `example/`).
 
-- Download the module via NPM, yarn or your package manager.
-  - `npm install @eggsy/vue-lanyard --save` or `yarn add @eggsy/vue-lanyard`
+- Download the module via NPM, Yarn or your package manager.
+  - For NPM: `npm install @eggsy/vue-lanyard`
+  - For Yarn: `yarn add @eggsy/vue-lanyard`
 
 ### 🤓 Setup
 
@@ -36,7 +37,7 @@ export default {
       userId: "162969778699501569",
     });
 
-    // Do whatever you want with normal Lanyard response object
+    // Do whatever you want with Lanyard response object
   },
 };
 ```
@@ -64,7 +65,7 @@ If you want to use the WebSocket way and get changes in **real-time**, you can f
 /*
   Listening to WebSocket is a bit different but it's nothing
   different than listening to a <WebSocket>
- */
+*/
 
 const socket = await this.$lanyard({
   userId: "162969778699501569",
