@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <button @click="disconnect">Close Socket</button>
+
     <h1>Vue Plugin for Lanyard API!</h1>
 
     <h3>Username: {{ getUsername }}</h3>
@@ -15,6 +17,7 @@ export default {
     return {
       userId: "162969778699501569",
       lanyard: {},
+      lanyardSocket: null,
     };
   },
   computed: {
@@ -22,24 +25,33 @@ export default {
      * Returns username from lanyard response object.
      */
     getUsername() {
-      return this.lanyard?.data?.discord_user?.username || "FETCHING";
+      return this.lanyard?.discord_user?.username || "FETCHING";
     },
   },
+  beforeDestory() {
+    // Don't forget to remove the socket on route/page change
+    this.lanyardSocket?.close();
+  },
   async mounted() {
-    const lanyardWithWebsocket = await this.$lanyard({
+    this.lanyardSocket = await this.$lanyard({
       userId: this.userId,
       // Enable socket option
       socket: true,
     });
 
-    lanyardWithWebsocket.addEventListener("message", ({ data }) => {
+    this.lanyardSocket.addEventListener("message", ({ data }) => {
       // Parse and destructure data object and assing t to type, d to status
-      const { t: type, d: status } = JSON.parse(data);
-
-      // Update the local data on both INIT_STATE and PRESENCE_DATA types
-      if (type === "INIT_STATE" || type === "PRESENCE_UPDATE")
-        this.lanyard = status;
+      const { d: status } = JSON.parse(data);
+      this.lanyard = status;
     });
+  },
+  methods: {
+    /**
+     * Disconnect from the socket, stop listening for new events.
+     */
+    disconnect() {
+      this.lanyardSocket?.close();
+    },
   },
 };
 </script>
