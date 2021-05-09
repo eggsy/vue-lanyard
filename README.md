@@ -1,6 +1,6 @@
 # 🚀 Vue Lanyard Plugin
 
-A Vue (2) plugin to track your Discord status using [Lanyard API](https://github.com/Phineas/lanyard/).
+> A Vue (2) plugin to track your Discord status using [Lanyard API](https://github.com/Phineas/lanyard/).
 
 Lanyard is a service that makes it super easy to export your live Discord presence to an API endpoint and to a WebSocket for you to use wherever you want. This plugin creates a connection between Lanyard and your Vue app **as a plugin** and lets you access the `$lanyard` anywhere in your app!
 
@@ -10,9 +10,8 @@ Lanyard is a service that makes it super easy to export your live Discord presen
 
 You'll need [Node.js](https://nodejs.org) and an existing Vue app to use this plugin (you can find an example vue-cli app in `example/`).
 
-1. Download the module via NPM, yarn or your package manager.
-
-- `npm install @eggsy/vue-lanyard --save` or `yarn add @eggsy/vue-lanyard`
+- Download the module via NPM, yarn or your package manager.
+  - `npm install @eggsy/vue-lanyard --save` or `yarn add @eggsy/vue-lanyard`
 
 ### 🤓 Setup
 
@@ -49,7 +48,9 @@ Lanyard method allows you to choose between WebSocket and REST connection. In bo
   This will actually return multiple Lanyard objects in a single array.
 
   Note:
-  I suggest you to use WebSocket connections when listening to multiple users because this mode basically sends a different request for each user at the same time.
+    I suggest you to use WebSocket connections when listening to
+    multiple users because this mode basically sends a different
+    request for each user at the same time.
 */
 
 this.$lanyard({
@@ -61,7 +62,8 @@ If you want to use the WebSocket way and get changes in **real-time**, you can f
 
 ```js
 /*
-  Listening to WebSocket is a bit different but it's nothing different than listening to a <WebSocket>
+  Listening to WebSocket is a bit different but it's nothing
+  different than listening to a <WebSocket>
  */
 
 const socket = await this.$lanyard({
@@ -89,7 +91,7 @@ If you only want to fetch data when the page loads and don't want to update it u
 
 ### 🤞 Todo
 
-[] [Nuxt.js](https://nuxtjs.org) compatibility.
+- [ ] [Nuxt.js](https://nuxtjs.org) compatibility.
 
 ### 🎉 Thanks
 
