@@ -1,6 +1,11 @@
+// Constants
 const apiBase = "https://api.lanyard.rest/v1";
+const webSocketBase = "wss://api.lanyard.rest/socket";
 
 export default {
+  /**
+   * Method that will be called by Vue.use() to inject the plugin into context.
+   */
   install(Vue) {
     /**
      * Plugin that lets you interact with Lanyard API using fetch or WebSocket.
@@ -16,7 +21,7 @@ export default {
         throw new Error("Missing `userId` option.");
       // Use websocket if socket option is set to true.
       else if (options.socket === true) {
-        const socket = new WebSocket("wss://api.lanyard.rest/socket");
+        const socket = new WebSocket(webSocketBase);
 
         let key = "subscribe_to_id";
         if (typeof options.userId === "object") key = "subscribe_to_ids";
