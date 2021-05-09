@@ -1,7 +1,7 @@
 {
   "name": "@eggsydev/vue-lanyard",
   "description": "Lanyard API plugin for Vue 2.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
