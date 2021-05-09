@@ -11,8 +11,8 @@ Lanyard is a service that makes it super easy to export your live Discord presen
 You'll need [Node.js](https://nodejs.org) and an existing Vue app to use this plugin (you can find an example vue-cli app in `example/`).
 
 - Download the module via NPM, Yarn or your package manager.
-  - For NPM: `npm install @eggsy/vue-lanyard`
-  - For Yarn: `yarn add @eggsy/vue-lanyard`
+  - For NPM: `npm install @eggsydev/vue-lanyard`
+  - For Yarn: `yarn add @eggsydev/vue-lanyard`
 
 ### 🤓 Setup
 
@@ -20,7 +20,7 @@ After you download the plugin, you have to import it into your app with `Vue.use
 
 ```js
 import Vue from "vue";
-import VueLanyard from "@eggsy/vue-lanyard";
+import VueLanyard from "@eggsydev/vue-lanyard";
 
 Vue.use(VueLanyard);
 
