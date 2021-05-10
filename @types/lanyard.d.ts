@@ -9,9 +9,9 @@ export interface LanyardResponse {
   success: boolean;
   data: LanyardData;
   error?: {
-		message: string;
-		code: string;
-	};
+    message: string;
+    code: string;
+  };
 }
 
 export interface LanyardData {
