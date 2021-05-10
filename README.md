@@ -4,7 +4,7 @@
 
 <p align="center">
 
-  ![Vue Lanyard plugin image](./images/readme.jpg)
+![Vue Lanyard plugin image](./images/readme.jpg)
 
 </p>
 
@@ -124,7 +124,7 @@ export default {
 };
 ```
 
-### ✍ TypeScript
+### 🔗 TypeScript
 
 This plugin comes with type support. You can import types from `@eggsydev/vue-lanyard/@types` and use them in your script.
 
@@ -132,3 +132,7 @@ This plugin comes with type support. You can import types from `@eggsydev/vue-la
 
 - [Phineas](https://github.com/Phineas/) - Creator of Lanyard API
 - Documents I followed online to create this plugin
+
+### 📝 License
+
+MIT License © 2021 [Abdulbaki Dursun](https://github.com/eggsy)
