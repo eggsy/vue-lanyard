@@ -8,10 +8,12 @@ export interface VueLanyardOptions {
 export interface LanyardResponse {
   success: boolean;
   data: LanyardData;
-  error?: {
-    message: string;
-    code: string;
-  };
+  error?: LanyardError;
+}
+
+export interface LanyardError {
+  message: string;
+  code: string;
 }
 
 export interface LanyardData {
