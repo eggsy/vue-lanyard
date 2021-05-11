@@ -28,7 +28,7 @@ export default {
       return this.lanyard?.discord_user?.username || "FETCHING";
     },
   },
-  beforeDestory() {
+  beforeDestroy() {
     // Don't forget to remove the socket on route/page change
     this.lanyardSocket?.close();
   },
