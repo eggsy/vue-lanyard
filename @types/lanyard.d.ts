@@ -17,11 +17,11 @@ export interface LanyardError {
 }
 
 export interface LanyardData {
-  spotify?: Spotify;
-  listening_to_spotify: boolean;
+  spotify: Spotify | null;
   discord_user: Discorduser;
-  discord_status: string;
+  discord_status: "online" | "dnd" | "offline" | "idle";
   activities: Activity[];
+  listening_to_spotify: boolean;
   active_on_discord_mobile: boolean;
   active_on_discord_desktop: boolean;
 }
@@ -37,7 +37,7 @@ export interface Spotify {
 
 export interface Timestamps {
   start: number;
-  end: number;
+  end?: number;
 }
 
 export interface Activity {
@@ -64,10 +64,13 @@ export interface Assets {
 
 export interface Timestamps {
   start: number;
+  end?: number;
 }
 
 export interface Emoji {
   name: string;
+  id: string;
+  animated: boolean;
 }
 
 export interface Discorduser {
@@ -75,5 +78,5 @@ export interface Discorduser {
   public_flags: number;
   id: string;
   discriminator: string;
-  avatar: string;
+  avatar: string | null;
 }
