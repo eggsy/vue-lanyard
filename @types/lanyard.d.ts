@@ -19,7 +19,7 @@ export interface LanyardError {
 export interface LanyardData {
   spotify: Spotify | null;
   discord_user: Discorduser;
-  discord_status: "online" | "dnd" | "offline" | "idle";
+  discord_status: "online" | "idle" | "dnd" | "offline";
   activities: Activity[];
   listening_to_spotify: boolean;
   active_on_discord_mobile: boolean;
@@ -47,7 +47,7 @@ export interface Activity {
   id: string;
   emoji?: Emoji;
   created_at: number;
-  application_id?: string;
+  application_id?: string | null;
   timestamps?: Timestamps;
   session_id?: string;
   details?: string;
@@ -56,8 +56,8 @@ export interface Activity {
 }
 
 export interface Assets {
-  small_text: string;
-  small_image: string;
+  small_text?: string;
+  small_image?: string;
   large_text: string;
   large_image: string;
 }
@@ -69,13 +69,13 @@ export interface Timestamps {
 
 export interface Emoji {
   name: string;
-  id: string;
-  animated: boolean;
+  id?: string;
+  animated?: boolean;
 }
 
 export interface Discorduser {
   username: string;
-  public_flags: number;
+  public_flags?: number;
   id: string;
   discriminator: string;
   avatar: string | null;
