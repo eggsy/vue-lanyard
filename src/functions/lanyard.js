@@ -1,5 +1,5 @@
 // Constants
-const { apiBase, webSocketBase } = require("../constants");
+import { apiBase, webSocketBase } from "../constants";
 
 /**
  * Plugin that lets you interact with Lanyard API using fetch or WebSocket.
