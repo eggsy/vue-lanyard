@@ -1,6 +1,6 @@
 # 🚀 Vue Lanyard Plugin
 
-> A Vue (2) plugin to track your Discord status using [Lanyard API](https://github.com/Phineas/lanyard/).
+> A Vue plugin to track your Discord status using [Lanyard API](https://github.com/Phineas/lanyard/).
 
 <p align="center">
 
@@ -87,6 +87,69 @@ socket.addEventListener("message", ({ data }) => {
 ```
 
 > ⚠ When using WebSocket, if you're using Vue Router, it won't close the socket connection even after you change the page, and if you return to the same page where you are connecting to socket, it will create another connection which will cause conflicts and unnecessary socket connections. You can use Vue's `beforeDestroy` hook to disconnect from the socket previous socket before leaving the page, check `example/src/components/Lanyard/WebSocket.vue` for more details.
+
+### 🤓 Setup for Vue3
+
+After you download the plugin, you have to import it into your app with `app.use()`. This will let you inject the `lanyard` method anywhere in your app!
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import VueLanyard from '@eggsydev/vue-lanyard'
+
+const app = createApp(App)
+app.use(VueLanyard)
+
+// Rest of your Vue app configuration
+```
+
+And then you can inject the `lanyard` method in your app.
+
+```js
+import { inject, onMounted, ref } from 'vue'
+
+const $lanyard = inject('lanyard')
+const response = ref({})
+
+onMounted(async () => {
+  // Call it on `mounted`
+  response.value = await $lanyard({
+    userId: '162969778699501569',
+  })
+
+  // Do whatever you want with Lanyard response object
+})
+```
+
+If you want to use the WebSocket way and get changes in **real-time**, you can follow this example.
+
+```js
+/*
+  Listening to WebSocket is a bit different but it's nothing
+  different than listening to a <WebSocket>
+*/
+
+import { ref, onMounted } from 'vue'
+
+const socket = ref({})
+
+onMounted(async () => {
+  socket.value = await $lanyard({
+    userId: '162969778699501569',
+    socket: true,
+  })
+
+  // Set a listener for "message" event
+  socket.value.addEventListener('message', ({ data }) => {
+    const { d: status } = JSON.parse(data)
+
+    // Do whatever you want with `status`
+  })
+})
+```
+
+> ⚠ When using WebSocket, if you're using Vue Router, it won't close the socket connection even after you change the page, and if you return to the same page where you are connecting to socket, it will create another connection which will cause conflicts and unnecessary socket connections. You can use Vue's `beforeUnmount` hook to disconnect from the socket previous socket before leaving the page, check `example-vue3/src/components/Lanyard/WebSocket.vue` for more details.
 
 ### 🤔 When to use WebSocket?
 
