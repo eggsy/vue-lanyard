@@ -134,7 +134,7 @@ This plugin comes with type support. You can import types from `@eggsydev/vue-la
 
 - [Phineas](https://github.com/Phineas/) - Creator of Lanyard API
 
-### Sponsors
+### 💖 Sponsors
 
 <p align="center">
   <a href="https://github.com/sponsors/eggsy">
