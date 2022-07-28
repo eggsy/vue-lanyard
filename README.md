@@ -12,6 +12,8 @@ Lanyard is a service that makes it super easy to export your live Discord presen
 
 ✨ **This plugin supports both REST and WebSocket methods.**
 
+> ⚠️ **Version 2.0.0** - BREAKING CHANGES! This is a major update to the plugin. The plugin has been completely rewritten in TypeScript and refactored all functions, dropping support for multiple user fetching and socket subscribing, but adding better handler to handle incoming data (`onMessage`) and using `isomorphic-fetch` to work on server-side too.
+
 ### 🔧 Install
 
 You'll need [Node.js](https://nodejs.org) and an existing Vue app to use this plugin (you can find an example vue-cli app in `example/`).
@@ -128,10 +130,17 @@ export default {
 
 This plugin comes with type support. You can import types from `@eggsydev/vue-lanyard/@types` and use them in your script.
 
-### 🎉 Thanks
+### 🙋‍♂️ Credits
 
 - [Phineas](https://github.com/Phineas/) - Creator of Lanyard API
-- Documents I followed online to create this plugin
+
+### Sponsors
+
+<p align="center">
+  <a href="https://github.com/sponsors/eggsy">
+    <img src='https://cdn.jsdelivr.net/gh/eggsy/.github/sponsors.svg'/>
+  </a>
+</p>
 
 ### 📝 License
 
