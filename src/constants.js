@@ -1,4 +1,7 @@
-module.exports = {
-  apiBase: "https://api.lanyard.rest/v1",
-  webSocketBase: "wss://api.lanyard.rest/socket",
+const apiBase = "https://api.lanyard.rest/v1";
+const webSocketBase = "wss://api.lanyard.rest/socket";
+
+export {
+  apiBase,
+  webSocketBase,
 };
